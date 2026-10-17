@@ -17,4 +17,4 @@ GitHub acceptance run: NOT RUN / replace with the actual run URL.
 Tested checkout SHA and PR head SHA: NOT VERIFIED / copy from the actual report.
 CodeRabbit review: NOT RUN / link the actual finding after review.
 
-Inspect the actual diff and reports. Keep acceptance tests and CI configuration unchanged. Update this description after the final fix and evaluation.
+Inspect the actual diff and reports against the agreed objective. Choose any project changes needed, then update this description after the final evaluation.

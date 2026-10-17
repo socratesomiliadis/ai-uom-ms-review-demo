@@ -11,9 +11,11 @@ reviews:
   sequence_diagrams: false
   poem: false
   path_instructions:
-    - path: "src/main/java/edu/ai/PriceCalculator.java"
+    - path: "**/*"
       instructions: |
-        Review against ticket.md, not just the PR author's description.
+        Review the complete change against ticket.md and the stated objective.
+        The implementation may change any project files and introduce helper classes,
+        tests, resources or build changes. Evaluate behavior and evidence across the full change.
         STUDENT10 applies at subtotal >= 50.00. Discount is 10%, capped at 20.00.
         Round the discount to two decimals using HALF_UP before subtracting it.
         Normalize the coupon with strip and locale-independent case handling.
