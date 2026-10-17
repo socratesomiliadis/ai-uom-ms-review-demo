@@ -11,3 +11,5 @@ the GitHub App, not an API key or a workflow. It reviews open PRs automatically.
 The instructor passes a valid finding to a free implementation chat and commits
 the fix manually. CI reruns; an AI can summarize the final actual evidence.
 Merge stays under human control. This is not an autonomous repair/merge agent.
+
+The implementation agent may explore and change any project files to meet the objective. The evaluator builds the full candidate project with its own build, helpers, resources and tests, then verifies the agreed contract cases. The prepared repair demonstrates an additional DiscountRounding helper class.

@@ -1,0 +1,126 @@
+{
+  "legacy": [
+    [
+      "edu.ai.LegacyTest",
+      "legacy(String, String, String)[1]"
+    ],
+    [
+      "edu.ai.LegacyTest",
+      "legacy(String, String, String)[2]"
+    ],
+    [
+      "edu.ai.LegacyTest",
+      "legacy(String, String, String)[3]"
+    ]
+  ],
+  "acceptance": [
+    [
+      "edu.ai.LegacyTest",
+      "legacy(String, String, String)[1]"
+    ],
+    [
+      "edu.ai.LegacyTest",
+      "legacy(String, String, String)[2]"
+    ],
+    [
+      "edu.ai.LegacyTest",
+      "legacy(String, String, String)[3]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[1]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[2]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[3]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[4]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[5]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[6]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[7]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[8]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[9]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[10]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[11]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[12]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[13]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[14]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[15]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[16]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[17]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "acceptance(String, String, String)[18]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "integerCentsOracleAndInvariantsFor500Inputs"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "rejectsInvalidSubtotal(String)[1]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "rejectsInvalidSubtotal(String)[2]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "rejectsInvalidSubtotal(String)[3]"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "localeDoesNotChangeCouponMeaning"
+    ],
+    [
+      "edu.ai.AcceptanceTest",
+      "rejectsNullSubtotal"
+    ]
+  ]
+}

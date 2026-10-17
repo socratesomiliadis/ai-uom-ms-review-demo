@@ -18,7 +18,6 @@ pipeline {
                 sh '''
                     git clone --no-hardlinks candidate policy
                     git -C policy checkout --detach "$TRUSTED_BASE_SHA"
-                    python3 policy/ci/check_scope.py candidate "$TRUSTED_BASE_SHA"
                 '''
             }
         }
