@@ -20,7 +20,7 @@ public final class PriceCalculator {
         String code = coupon == null ? "" : coupon.strip().toUpperCase(Locale.ROOT);
         if ("STUDENT10".equals(code) && subtotal.compareTo(STUDENT_THRESHOLD) >= 0) {
             BigDecimal discount = subtotal.multiply(STUDENT_RATE)
-                    .min(MAX_DISCOUNT);
+                    .min(MAX_DISCOUNT).setScale(2, RoundingMode.HALF_UP);
             return subtotal.subtract(discount).setScale(2, RoundingMode.HALF_UP);
         }
         return subtotal.setScale(2, RoundingMode.UNNECESSARY);
