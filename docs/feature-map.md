@@ -16,7 +16,7 @@ Legacy tests: `./mvnw -B -ntp test` ή `mvnw.cmd -B -ntp test` σε Windows.
 
 Acceptance evaluator: `python ci/evaluate.py --candidate . --trusted . --out reports`.
 
-Ο evaluator μεταφέρει μόνο το candidate Java αρχείο σε νέο evaluation directory, χρησιμοποιώντας tests και build configuration από το trusted path. Σε PR CI, το trusted path είναι ξεχωριστό checkout του base commit. Στο τοπικό παράδειγμα είναι το ίδιο directory· μην τροποποιείτε τη σουίτα.
+Ο evaluator χτίζει το πλήρες candidate project, μαζί με helpers, resources, tests και build configuration. Στο acceptance run προστίθενται τα συμφωνημένα cases από το reviewed contract checkout και ελέγχεται η εκτέλεσή τους. Στο GitHub το contract προέρχεται από ξεχωριστό base checkout.
 
 ## Αποδεικτικά στοιχεία
 

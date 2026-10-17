@@ -21,12 +21,13 @@ Flag any ambiguity before changing code. Do not edit files yet.
 
 ```text
 Implement PRICING-142 using the provided acceptance contract.
-Make the smallest change to PriceCalculator.java. Preserve the public API.
-Use BigDecimal. Do not add dependencies or change the ticket, evaluator, CI, or Maven configuration.
-If you have a terminal, run the legacy tests and the acceptance evaluator.
+Explore the repository and choose the implementation and files needed to meet the objective.
+You may add or refactor classes, supporting tests, resources, documentation, and build configuration.
+Preserve the agreed public behavior and API. Explain how your decisions serve the objective.
+Use the available tools to run your own checks and the independent acceptance evaluator.
 Report the exact commands and actual results. If you cannot run a check, write NOT RUN.
-If you are working in browser chat, return the complete Java file for copy and paste.
-Briefly explain the change. Do not merge the PR.
+If you are working in browser chat, return every changed file with its path and complete content.
+Summarize the change and evidence for the PR. Do not merge the PR.
 ```
 
 ## Διόρθωση από failure
@@ -34,9 +35,10 @@ Briefly explain the change. Do not merge the PR.
 ```text
 The independent evaluator reports 45.05 for subtotal 50.05 with STUDENT10.
 The acceptance contract requires 45.04 because the discount must be rounded before subtraction.
-Use the provided code and report to identify the mismatch.
-Fix only PriceCalculator.java. Do not change expected values, the ticket, or the evaluator.
-Explain the fix using this exact example. Rerun checks if you can; otherwise write NOT RUN.
+Use the provided repository and report to diagnose the mismatch.
+Choose the changes, files, and tools needed to restore the agreed behavior.
+Explain the fix using this example and verify the complete updated project.
+Report actual results and remaining uncertainty. If you cannot run a check, write NOT RUN.
 ```
 
 ## Εξήγηση με evidence
