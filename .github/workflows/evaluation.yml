@@ -1,0 +1,55 @@
+name: Ticket evaluation
+on:
+  pull_request:
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  ticket-evaluation:
+    name: ticket-evaluation
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          path: candidate
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          path: policy
+          ref: ${{ github.event.pull_request.base.sha || github.sha }}
+          persist-credentials: false
+      - uses: actions/setup-java@b6effb05e454b25005698d916606bdc6ffcbf961 # v5
+        with:
+          distribution: temurin
+          java-version: '17'
+      - name: Scope from protected base
+        if: github.event_name == 'pull_request'
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: python policy/ci/check_scope.py candidate "$BASE_SHA"
+      - name: Run trusted tests on the candidate class
+        env:
+          MODE: acceptance
+          PR_HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: python policy/ci/evaluate.py --candidate candidate --trusted policy --mode "$MODE" --out reports
+      - name: Show result
+        if: always()
+        run: |
+          if [ -f reports/result.json ]; then
+            echo '### Ticket evaluation' >> "$GITHUB_STEP_SUMMARY"
+            echo '```json' >> "$GITHUB_STEP_SUMMARY"
+            cat reports/result.json >> "$GITHUB_STEP_SUMMARY"
+            echo '```' >> "$GITHUB_STEP_SUMMARY"
+          fi
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        if: always()
+        with:
+          name: evaluation-${{ github.run_id }}
+          path: |
+            reports/result.json
+            reports/build.log
+            reports/junit/
+          retention-days: 1
+          if-no-files-found: warn

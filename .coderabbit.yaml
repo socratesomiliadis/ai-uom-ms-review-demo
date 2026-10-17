@@ -1,0 +1,39 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: en-US
+tone_instructions: "Be concise. Prioritize reproducible correctness findings. Distinguish verified evidence from hypotheses. Do not invent CI results."
+early_access: false
+enable_free_tier: true
+reviews:
+  profile: chill
+  request_changes_workflow: false
+  high_level_summary: true
+  high_level_summary_in_walkthrough: true
+  sequence_diagrams: false
+  poem: false
+  path_instructions:
+    - path: "src/main/java/edu/ai/PriceCalculator.java"
+      instructions: |
+        Review against ticket.md, not just the PR author's description.
+        STUDENT10 applies at subtotal >= 50.00. Discount is 10%, capped at 20.00.
+        Round the discount to two decimals using HALF_UP before subtracting it.
+        Normalize the coupon with strip and locale-independent case handling.
+        Keep the public API, input validation and result scale 2.
+        For material findings, identify the code location, violated requirement,
+        and a concrete input with expected versus actual output.
+        Label hypotheses and anything not executed as NOT VERIFIED or NOT RUN.
+        Do not treat a green CI run or lack of findings as proof of correctness.
+  auto_review:
+    enabled: true
+    auto_incremental_review: true
+    drafts: false
+  finishing_touches:
+    autofix:
+      enabled: false
+    fix_ci:
+      enabled: false
+    docstrings:
+      enabled: false
+    unit_tests:
+      enabled: false
+    resolve_merge_conflict:
+      enabled: false
